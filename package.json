@@ -10,23 +10,23 @@
     "lint:style": "stylelint src/**/**/*.css src/**/**/*.scss"
   },
   "dependencies": {
-    "babel-preset-react-app": "^3.1.1",
+    "babel-preset-react-app": "^3.1.2",
     "cross-env": "^5.2.0",
     "cypress": "^3.0.1",
-    "parcel-bundler": "^1.9.0",
+    "parcel-bundler": "^1.9.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
-    "prettier": "^1.13.5",
-    "prettierrc": "0.0.0-5",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "^1.13.6",
+    "prettierrc": "0.0.0",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0"
   }
