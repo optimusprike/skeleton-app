@@ -4,7 +4,7 @@ import Login from './Login';
 import Register from './Register';
 import Home from './Home';
 import Roster from './Roster';
-import newPlayer from './newPlayer';
+import NewPlayer from './newPlayer';
 
 /*const App = () => (
   <BrowserRouter>
@@ -43,7 +43,7 @@ class App extends Component {
         <Route path='/login' render={() => <Login getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
         <Route path='/register' render={() => <Register getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
         <Route path='/roster' render={() => <Roster getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
-        <Route path='/player/new' render={() => <newPlayer getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
+        <Route path='/player/new' render={() => <NewPlayer getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
         <Route exact path='/' render={() => <Home getToken = { token => this.getToken() } setToken={token => this.setToken(token)}/> } />
       </Switch>
     </BrowserRouter>

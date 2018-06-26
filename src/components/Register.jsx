@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(){
     super();
     this.state = {
@@ -38,9 +38,10 @@ export default class Register extends Component {
         if(responseJson.success===true) {
           //this.props.history.push('/roster');
           console.log(responseJson.token);
+          this.props.setToken(responseJson.token);
+          console.log("hi " + this.props.getToken());
           this.props.history.push({
-            pathname: '/roster',
-            state: { token: responseJson.token }
+            pathname: '/roster'
           });
         }
       });
@@ -75,5 +76,7 @@ export default class Register extends Component {
    );
   }
 }
+
+export default withRouter(Register);
 // <Link to="/roster"><button onClick={() => this.createAccount()}>Click to Create</button></Link>
 //<button onClick = {() => this.createAccount()} id="register" type="submit"/>

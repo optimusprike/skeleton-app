@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 // const newPlayer = () => {
 //   return (
@@ -8,7 +9,7 @@ import React , { Component } from 'react';
 //
 // export default newPlayer;
 
-class newPlayer extends Component {
+class NewPlayer extends Component {
   constructor(){
     super();
     this.state = {
@@ -25,7 +26,7 @@ class newPlayer extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.props.location.state.token
+        'Authorization': 'Bearer ' + this.props.getToken()
       },
       body: JSON.stringify({
         first_name: this.state.firstName,
@@ -43,8 +44,7 @@ class newPlayer extends Component {
         //this.props.history.push('/roster');
         console.log(responseJson.token);
         this.props.history.push({
-          pathname: '/roster',
-          state: { token: this.props.location.state.token }
+          pathname: '/roster'
         });
       }
     });
@@ -57,7 +57,7 @@ class newPlayer extends Component {
 
 
   render () {
-    console.log("New Player page " + this.props.location.state.token);
+    //console.log("New Player page " + this.props.location.state.token);
     return(
       <div>
         <p>First Name</p>
@@ -67,13 +67,16 @@ class newPlayer extends Component {
         <p>Rating</p>
         <input id="rating" type="text" value = {this.state.rating} onChange={(event) => this.inputChange(event)} />
         <p>Handedness</p>
-        <input id="handedness" type="text" value = {this.state.handedness} onChange={(event) => this.inputChange(event)} />
+        <select id="handedness" value = {this.state.handedness} onChange={(event) => this.inputChange(event)}>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
         <p>Create Player</p>
-        <button id="register" onClick={() => this.createPlayer()}>Click to Create</button>
+        <button id="create" onClick={() => this.createPlayer()}>Click to Create</button>
       </div>
     );
 
   }
 }
-
-export default newPlayer;
+//<input id="handedness" type="text" value = {this.state.handedness} onChange={(event) => this.inputChange(event)} />
+export default withRouter(NewPlayer);
