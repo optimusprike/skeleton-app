@@ -57,7 +57,7 @@ class Login extends Component{
           <input id="email" type="email" name="email" value = {this.state.email} onChange={(event) => this.inputChange(event)} placeholder="jane@doe.com"/>
           <p>Password</p>
           <input id="password" name="password" type="password" onChange={(event) => this.inputChange(event)}/>
-          <button id="login" onClick={() => this.loginSubmit()}/>
+          <button id="login" onClick={() => this.loginSubmit()}>Login</button>
         </div>
       );
   }

@@ -1,5 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+// import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom';
 
 const Home = () => (
   <div>
@@ -10,4 +11,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default withRouter(Home);

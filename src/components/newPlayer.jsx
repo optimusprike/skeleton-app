@@ -68,6 +68,7 @@ class NewPlayer extends Component {
         <input id="rating" type="text" value = {this.state.rating} onChange={(event) => this.inputChange(event)} />
         <p>Handedness</p>
         <select id="handedness" value = {this.state.handedness} onChange={(event) => this.inputChange(event)}>
+          <option value="">Select</option>
           <option value="left">Left</option>
           <option value="right">Right</option>
         </select>
